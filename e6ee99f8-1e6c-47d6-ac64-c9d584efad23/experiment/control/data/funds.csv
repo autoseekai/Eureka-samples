@@ -1,0 +1,26 @@
+fund_id,vintage_year,strategy,target_size_m
+1,2011,Infrastructure,409.0
+2,2007,Infrastructure,343.0
+3,2008,Buyout,3753.0
+4,2012,Infrastructure,271.0
+5,2009,Buyout,426.0
+6,2007,Infrastructure,977.0
+7,2010,Buyout,362.0
+8,2008,Growth Equity,703.0
+9,2010,Infrastructure,599.0
+10,2010,Buyout,932.0
+11,2009,Venture Capital,99.0
+12,2013,Growth Equity,905.0
+13,2013,Buyout,351.0
+14,2007,Infrastructure,486.0
+15,2010,Infrastructure,274.0
+16,2009,Buyout,2120.0
+17,2010,Infrastructure,52.0
+18,2010,Venture Capital,1635.0
+19,2008,Infrastructure,205.0
+20,2008,Buyout,1861.0
+21,2009,Buyout,1368.0
+22,2010,Real Estate,1113.0
+23,2009,Growth Equity,923.0
+24,2010,Venture Capital,3890.0
+25,2012,Real Estate,223.0

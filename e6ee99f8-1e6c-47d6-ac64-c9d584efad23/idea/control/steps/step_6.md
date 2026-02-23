@@ -1,0 +1,6 @@
+### **Scientific Paper Title and Description**
+
+**Title:** First-Mover Dynamics: Quantifying Informational Cascades and Network Leadership in Private Equity Investing
+
+**Description:**
+This study investigates whether transaction behavior among sophisticated private equity investors during economic crises is driven by rational informational cascades rather than irrational herding. We employ an event-based, relative timing analysis of transaction sequences within co-investment networks following major economic shocks to identify consistent "first-movers" whose actions precede those of their peers. We hypothesize that a small, identifiable subset of investors consistently acts first, and that the probability of their peers following is a function of the first-mover's historical investment success. By empirically mapping these cascades, this research provides a new framework for understanding peer effects in opaque markets and moves beyond simplistic behavioral labels. The results will offer a novel approach to risk management, allowing firms to monitor "first-mover" clients as bellwethers of sentiment shifts and potential liquidity events within their investor networks.

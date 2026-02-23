@@ -1,0 +1,85 @@
+{
+  "steps": [
+    {
+      "number": 1,
+      "type": "experiment",
+      "instructions": [
+        "Simulate a realistic dataset containing investor profiles, fund information, historical transactions (commitments, secondary sales, capital calls), and cash flow data necessary to calculate IRR and TVPI.",
+        "Implement the data filtering and transaction classification logic as defined in Methodology Section 2.1 to isolate 'Liquidation Signals', 'Allocation Signals', and 'Distress Signals'.",
+        "Implement the event-relative timeline construction (Methodology Section 2.2), mapping all classified transactions to a standardized [T-30, T+90] day window for each of the three economic shocks.",
+        "Implement the procedure to calculate the composite 'Performance Score' (PS) for each investor prior to each event window, including z-score normalization and weighted averaging as per Methodology Section 2.4.",
+        "Generate and save the prepared datasets for each of the three economic shocks, ensuring they contain all necessary columns for subsequent steps (Investor_ID, Transaction_Type, Relative_Day, PS, etc.)."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Simulate the required private equity transaction dataset and perform all data preparation, filtering, and feature engineering tasks, including the calculation of the 'Performance Score' (PS) for each investor."
+    },
+    {
+      "number": 2,
+      "type": "experiment",
+      "instructions": [
+        "Write code to construct the three distinct co-investment network graphs (G_GFC, G_Eurozone, G_COVID) based on the five-year lookback period specified in Methodology Section 2.3.",
+        "Implement the First-Mover Identification Algorithm as detailed in Methodology Section 3.1, ensuring the tie-breaking protocol using the Performance Score (PS) and transaction amount is correctly applied.",
+        "Execute the algorithm for each of the nine event-transaction scenarios (3 shocks × 3 behaviors) to identify and record the 'FirstMover_ID' for each case.",
+        "Implement the logic to analyze the results across the three shocks and classify any 'Consistent First-Movers' as defined in Methodology Section 3.2.",
+        "Output a summary table listing the identified First-Mover for each of the nine scenarios and a separate list of all 'Consistent First-Movers'."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Construct the co-investment network graphs and implement the algorithm to identify first-movers for each crisis scenario and classify consistent first-movers across events."
+    },
+    {
+      "number": 3,
+      "type": "experiment",
+      "instructions": [
+        "Generate time-series plots illustrating the evolution of key customer metrics (e.g., aggregate transaction volumes, average transaction sizes) over the [T-30, T+90] window for each shock, highlighting the T=0 event date.",
+        "Create visualizations (e.g., comparative bar charts) to analyze customer behavior and portfolio performance during the 'normal' pre-event period (T-30 to T-1) versus the 'shock' post-event period (T=0 to T+90).",
+        "Based on investor features (e.g., historical PS, transaction frequencies, AUM) and the methodology's focus on behavior, apply a clustering algorithm (e.g., K-Means) to identify distinct customer segments.",
+        "Generate visualizations of the clustering results (e.g., a scatter plot of the first two principal components, colored by cluster) to highlight the distinct segments and their patterns.",
+        "Save all generated plots as high-resolution image files with clear titles and labels."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Generate key visualizations illustrating the evolution of customer metrics over time, comparing behavior across normal and crisis periods, and showing the results of customer segmentation via clustering."
+    },
+    {
+      "number": 4,
+      "type": "experiment",
+      "instructions": [
+        "For each of the nine identified first-mover events, write a script to prepare the data for survival analysis.",
+        "Define the at-risk population for each event, consisting of all investors directly connected to the FirstMover_ID in the relevant network graph, excluding those who acted on or before the first-mover.",
+        "For each peer in the at-risk population, calculate the dependent variables: 'Time' (number of days from the first-mover's action to the peer's action) and 'Event' (1 if the peer follows, 0 if censored at T+90).",
+        "Using a statistical library like 'lifelines' in Python, implement and fit the Cox Proportional Hazards model for each of the nine scenarios using the full specification from Methodology Section 5.1.",
+        "Ensure the model fitting process saves all regression outputs, including coefficients, hazard ratios, standard errors, z-values, and p-values for each variable."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Prepare the data for survival analysis and implement the Cox Proportional Hazards (CPH) model for each of the nine first-mover scenarios to quantify the influence of first-movers on their peers."
+    },
+    {
+      "number": 5,
+      "type": "experiment",
+      "instructions": [
+        "Create a correlation matrix heatmap to visualize the relationships among key variables, including demographic attributes (simulated), investment choices (PS), and transaction behaviors.",
+        "Consolidate the CPH model outputs from all nine scenarios into a single, well-formatted regression table as specified in Methodology Section 5.3.",
+        "Generate forest plots to visualize the hazard ratios and their confidence intervals for the key variables (especially 'FirstMover_PS') across the nine models.",
+        "For a representative scenario, generate and plot the survival curves for peer groups, stratified by a high versus low 'FirstMover_PS', to visually demonstrate the impact of leader performance on cascade velocity.",
+        "Save all generated tables and plots as files for the final reporting step."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Extract and tabulate the CPH model results for hypothesis testing and generate advanced visualizations, including correlation structures and survival curves, to interpret model findings."
+    },
+    {
+      "number": 6,
+      "type": "research",
+      "instructions": [
+        "Begin by presenting the descriptive results, referencing the plots from Step 3. Describe the evolution of customer metrics during economic stress and the comparative analysis between normal and shock periods.",
+        "Present the clustering results, referencing the visualizations from Step 3. Describe the distinct customer segments identified and their defining behavioral patterns.",
+        "Present the main findings from the CPH models. Refer to the consolidated regression table and forest plots from Step 5 to formally address the hypotheses. State whether H1, H2, and H3 are supported, interpreting the hazard ratios and statistical significance of 'FirstMover_PS'.",
+        "Analyze the correlation structures from Step 5, explaining the observed relationships between demographics, investment success (PS), and transaction behaviors.",
+        "Synthesize the simulation outcomes to discuss how external economic conditions affect customer behavior in this segment, referencing the survival curves and other evidence of informational cascades.",
+        "Provide insights on risk management (e.g., monitoring first-movers), customer segmentation, and investment strategies based on the empirical findings.",
+        "Conclude with a discussion of the limitations and potential biases of the simulation and modeling approach, and comment on the model's performance under the simulated extreme conditions."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Write the complete 'Results' section of the research paper. Synthesize all findings, tables, and plots from previous steps to provide a comprehensive analysis, interpret the results in the context of the hypotheses, and discuss their implications."
+    }
+  ],
+  "summary": "This research plan details a six-step process to investigate first-mover dynamics in private equity investing during economic crises. The plan begins with simulating a realistic dataset, followed by network construction and the algorithmic identification of 'first-movers'. Subsequent steps involve generating descriptive and advanced visualizations, implementing a Cox Proportional Hazards model to test hypotheses about informational cascades, and finally, a comprehensive synthesis of all results into a final report by the researcher. The plan is designed to be executed by an engineer and a researcher, systematically progressing from data engineering to statistical modeling and final analysis."
+}

@@ -1,0 +1,79 @@
+{
+  "steps": [
+    {
+      "number": 1,
+      "type": "research",
+      "instructions": [
+        "Based on the project title and description, formalize the primary hypothesis: 'A small, identifiable subset of investors consistently acts as 'first-movers' during economic shocks, and the probability of their peers following is a function of the first-mover's historical investment success.'",
+        "Formulate at least one secondary hypothesis, for example: 'The time lag of the peer-following cascade is inversely proportional to the historical success of the first-mover.'",
+        "Operationally define 'major economic shocks' by identifying specific historical events and their precise dates (e.g., Lehman Brothers collapse, COVID-19 market crash).",
+        "Define the 'event window' for analysis around each shock (e.g., T-30 to T+90 days).",
+        "Define a 'co-investment network' by specifying the criteria for a connection between two investors (e.g., investment in the same fund or deal within a certain time frame).",
+        "Define the specific 'transaction behaviors' to be analyzed (e.g., liquidations, capital calls, new investments above a certain threshold)."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Define the core concepts and formalize the specific, testable hypotheses for the research project. This step translates the abstract project idea into concrete, operational definitions that will guide the entire methodology."
+    },
+    {
+      "number": 2,
+      "type": "research",
+      "instructions": [
+        "Outline the procedure for filtering the raw transaction data to isolate the 'transaction behaviors' defined in Step 1.",
+        "Design a process to map all relevant transactions onto a timeline relative to each identified 'major economic shock'. Each transaction should be timestamped relative to the event date (e.g., T+5 days).",
+        "Specify the method for constructing the 'co-investment network' graph from the data, where nodes are investors and edges represent co-investments.",
+        "Formulate a quantitative metric for 'historical investment success' (e.g., a composite score based on prior IRR, MOIC, or Sharpe ratio) that can be calculated for each investor at the beginning of each event window."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Detail the methodology for data preprocessing and feature engineering. This involves preparing the raw data to fit the event-based analysis framework, constructing the investor network, and calculating key metrics like historical performance."
+    },
+    {
+      "number": 3,
+      "type": "research",
+      "instructions": [
+        "Design a step-by-step algorithm to process the transaction timelines within each event window.",
+        "The algorithm must, for each event window, identify the investor ID and timestamp of the very first instance of a predefined transaction type (e.g., the first major liquidation).",
+        "Establish a clear rule for handling ties (e.g., if multiple investors act on the same day, the one with the larger transaction size or higher historical success is the first-mover).",
+        "Define the criteria for classifying an investor as a 'consistent first-mover' (e.g., an investor who is identified as a first-mover in more than a specified percentage of the analyzed shock events)."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Develop a precise, algorithmic approach for identifying 'first-movers'. This methodology must be deterministic and replicable, providing a clear procedure for flagging the initial actor in a sequence of transactions following an economic shock."
+    },
+    {
+      "number": 4,
+      "type": "research",
+      "instructions": [
+        "For each identified first-mover action, define the 'at-risk' peer group as the set of investors directly connected to the first-mover in the co-investment network who have not yet performed the action.",
+        "Propose a statistical framework to measure the influence of the first-mover. A survival analysis model (e.g., Cox Proportional Hazards) is a suitable choice to model the 'time to follow' for peers.",
+        "Define the dependent variable for the model: the time from the first-mover's action to the peer's subsequent similar action.",
+        "Define the event in the survival model as 'a peer performs a similar action' and specify the censoring mechanism (e.g., the end of the event window)."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Formulate the statistical model for quantifying the informational cascade. This step focuses on designing a method to measure the probability and speed of peers following a first-mover's action, establishing the core analytical engine for the study."
+    },
+    {
+      "number": 5,
+      "type": "research",
+      "instructions": [
+        "Specify how to integrate the 'historical investment success' metric (from Step 2) as a primary independent variable into the cascade model (from Step 4).",
+        "The primary goal of the model is to estimate the coefficient for the first-mover's success metric and test its statistical significance in predicting the hazard rate of peer-following behavior.",
+        "List the necessary control variables to include in the model to isolate the effect of first-mover success. Examples include: peer's own historical success, network distance from the first-mover, transaction size, and general market volatility during the period.",
+        "Describe the exact output required to validate the hypothesis, which is a regression table showing the coefficients, standard errors, and p-values for all variables in the model."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Outline the formal procedure for testing the central hypothesis. This involves specifying the complete regression model, including all independent and control variables, and defining the criteria for confirming or refuting the hypothesis based on the statistical output."
+    },
+    {
+      "number": 6,
+      "type": "research",
+      "instructions": [
+        "Synthesize the outputs of Steps 1 through 5 into a single, cohesive document.",
+        "Structure the document as a formal 'Methodology' section suitable for a scientific paper.",
+        "Use clear subheadings that mirror the research process: '1. Hypothesis and Operational Definitions', '2. Data Preparation and Network Construction', '3. First-Mover Identification Algorithm', '4. Cascade Analysis using Survival Modeling', and '5. Econometric Framework for Hypothesis Testing'.",
+        "Write the entire section in a formal, objective, and instructional tone, detailing the exact sequence of steps a researcher must follow to replicate the study. The text should focus exclusively on the 'how' and avoid any speculative discussion on results or implications."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Consolidate the detailed plans from all previous steps into a comprehensive and formal methodology description. This final step is dedicated to producing the full written methodology as a single, structured narrative, serving as the complete instruction manual for the research project."
+    }
+  ],
+  "summary": "This research plan outlines a six-step methodology to investigate 'First-Mover Dynamics' in private equity investing. The plan starts by formalizing hypotheses and operational definitions, then details data preparation and network construction. It proceeds to define an algorithm for identifying first-movers and a survival analysis model to quantify informational cascades. The plan culminates in structuring the final hypothesis test and synthesizing all components into a comprehensive methodology document intended to guide a research assistant."
+}
