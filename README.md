@@ -42,7 +42,7 @@
 
 **Eureka × AutoSeek** is a two-layer autonomous research system:
 
-<video src="https://github.com/user-attachments/assets/0fdb0fc8-3f0f-4d34-81f0-7158bc09c91e" 
+<video src="https://github.com/user-attachments/assets/a6de70db-fcc0-41d3-9417-ad05e0b08115" 
        width="100%" controls autoplay muted loop>
 </video>
 
