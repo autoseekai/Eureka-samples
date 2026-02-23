@@ -1,0 +1,22 @@
+Statistical Analysis of Intervention Gain Scores
+==================================================
+
+1. Descriptive Statistics:
+                             mean       std  count
+Intervention_Condition                            
+Control                  4.098104  3.734675     50
+Diagnostic-Matched      17.803562  5.077068     50
+Generic Intervention    12.080014  3.934462     50
+
+2. One-Way ANOVA Results:
+                                sum_sq     df           F        PR(>F)
+C(Intervention_Condition)  4738.490960    2.0  128.753051  4.884622e-33
+Residual                   2705.016178  147.0         NaN           NaN
+
+3. Independent Samples T-Tests:
+- Diagnostic-Matched vs. Generic Intervention: t=6.30091414698308, p=8.457181766471689e-09
+- Diagnostic-Matched vs. Control: t=15.37622700333177, p=7.210488289181089e-28
+
+4. Cohen's d Effect Size:
+- Diagnostic-Matched vs. Generic Intervention: d=1.260182829396616
+- Diagnostic-Matched vs. Control: d=3.075245400666354

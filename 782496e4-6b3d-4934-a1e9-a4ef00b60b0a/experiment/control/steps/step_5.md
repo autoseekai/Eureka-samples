@@ -1,0 +1,7 @@
+```json
+{
+  "success": true,
+  "output": "<string>:131: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\n--- Descriptive Statistics ---\n                             mean       std  count\nIntervention_Condition                            \nControl                  4.098104  3.734675     50\nDiagnostic-Matched      17.803562  5.077068     50\nGeneric Intervention    12.080014  3.934462     50\n\n--- One-Way ANOVA ---\n                                sum_sq     df           F        PR(>F)\nC(Intervention_Condition)  4738.490960    2.0  128.753051  4.884622e-33\nResidual                   2705.016178  147.0         NaN           NaN\n\n--- Independent T-Tests ---\nDiagnostic-Matched vs. Generic Intervention: t=6.30091414698308, p=8.457181766471689e-09\nDiagnostic-Matched vs. Control: t=15.37622700333177, p=7.210488289181089e-28\n\n--- Cohen's d Effect Size ---\nDiagnostic-Matched vs. Generic Intervention: d=1.260182829396616\nDiagnostic-Matched vs. Control: d=3.075245400666354\n\nStatistical results saved to /work_dir/data/statistical_analysis_results.txt\nPlot saved to /work_dir/plots/figure2_gain_scores.png",
+  "attempts": 1
+}
+```
