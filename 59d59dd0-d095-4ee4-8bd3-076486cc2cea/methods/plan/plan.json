@@ -1,0 +1,82 @@
+{
+  "steps": [
+    {
+      "number": 1,
+      "type": "research",
+      "instructions": [
+        "Define the core learning equation that models a student's score progression over time. A logistic growth (S-curve) model is recommended to naturally incorporate a mastery ceiling. For example: `Score(t+1) = Score(t) + LearningRate * (MasteryCeiling - Score(t))`.",
+        "Define the 'Learning Rate' parameter. This will be the key variable modified by the intervention and should consist of a base learning rate `LR_base` for each student.",
+        "Define the intervention effect mathematically. Model the intervention as a temporary boost to the learning rate that decays over time. Specify the equation for the learning rate of a treated student at time `t` post-intervention, for example: `LearningRate(t) = LR_base + Boost * exp(-DecayRate * t)`.",
+        "Define the 'Mastery Ceiling' as a constant representing the maximum possible score (e.g., 100).",
+        "List and clarify all parameters to be used in the model: `Score(t)`, `LearningRate`, `MasteryCeiling`, `Boost`, `DecayRate`, and `t` (time steps)."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Formalize the Dynamic Learning Model. This step involves defining the precise mathematical equations that will govern student learning trajectories, the intervention's effect, and the constraints of the simulated system. This provides the theoretical foundation for the simulation."
+    },
+    {
+      "number": 2,
+      "type": "research",
+      "instructions": [
+        "Define the initial population characteristics. Specify the procedure for generating initial scores (`Score(0)`) for a cohort of N students (e.g., N=1000) using a normal distribution with a specified mean and standard deviation (e.g., Mean=50, SD=15), truncated between 0 and the Mastery Ceiling.",
+        "Define the 'Low-Achiever' group. Specify the exact criterion for identifying these students, for example, students in the bottom quartile or below the 25th percentile of the initial score distribution.",
+        "Define the two primary simulation scenarios for comparison: Scenario A (Targeted Intervention), where the intervention is applied only to the identified 'Low-Achiever' group, and Scenario B (General Population Intervention), where the intervention is applied to a randomly selected group of the same size.",
+        "List all key parameters to be set for the simulation runs, including: number of students (N), number of time steps (T), mean and SD of initial scores, mastery ceiling value, base learning rate, intervention boost size, and intervention decay rate."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Define Simulation Scenarios and Population Parameters. This step specifies the parameters for the student populations and the different experimental conditions that will be simulated to test the project's central hypothesis."
+    },
+    {
+      "number": 3,
+      "type": "research",
+      "instructions": [
+        "Generate the initial population of N students with scores at `t=0` based on the parameters defined in Step 2.",
+        "Identify the 'Treatment Group' (low-achievers based on the defined cutoff) and the 'Control Group' (all other students).",
+        "For each time step `t` from 1 to T, calculate the new score `Score(t)` for every student. For students in the Treatment Group, use the learning equation with the decaying boost. For students in the Control Group, use the learning equation with only their base learning rate.",
+        "Ensure that no student's score can exceed the Mastery Ceiling. If a calculation results in a score greater than the ceiling, cap it at the ceiling value.",
+        "Specify that the results for each student at each time step must be stored in a structured format (e.g., a table with columns: `student_id`, `time_step`, `score`, `group` ['treatment'/'control'])."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Detail the Simulation Procedure for the Targeted Intervention (Scenario A). This step outlines the exact process for generating the dataset for the core experimental scenario where the educational intervention is applied specifically to low-achieving students."
+    },
+    {
+      "number": 4,
+      "type": "research",
+      "instructions": [
+        "Generate the same initial population of N students with scores at `t=0` as in Scenario A. It is critical to use the same random seed to ensure the starting populations are identical for a fair comparison between scenarios.",
+        "Identify the 'Treatment Group' by randomly selecting a number of students from the entire population, ensuring the group size is equal to the low-achiever group size in Scenario A. The 'Control Group' consists of all other students.",
+        "For each time step `t` from 1 to T, calculate the new score `Score(t)` for every student using their respective learning rate (boosted for the treatment group, base for the control group).",
+        "Apply the Mastery Ceiling constraint as in the previous step.",
+        "Specify that the results should be stored in the same structured format, noting that the 'treatment' group is a random sample in this scenario."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Detail the Simulation Procedure for the General Population Intervention (Scenario B). This step outlines the process for generating the comparative dataset where the intervention is applied to a random sample of students, representing a non-targeted approach."
+    },
+    {
+      "number": 5,
+      "type": "research",
+      "instructions": [
+        "Define the primary outcome measure as the effect size, specifically Cohen's d. Specify that it must be calculated at each time point `t > 0` for both Scenario A and Scenario B using the formula: `(Mean_Score_Treatment(t) - Mean_Score_Control(t)) / Pooled_SD(t)`.",
+        "Specify the primary visualization: a line plot of 'Effect Size vs. Time'. This plot must contain two distinct lines, one for the effect size in the Targeted Intervention (Scenario A) and one for the General Population Intervention (Scenario B).",
+        "Specify a secondary visualization: a line plot of 'Average Score vs. Time'. This plot should display the learning trajectories of four groups: Treatment and Control from Scenario A, and Treatment and Control from Scenario B, to visualize the catch-up and ceiling dynamics.",
+        "State that the analysis must explicitly identify the peak effect size and the time point at which it occurs for both scenarios, and then directly compare these peak values to evaluate the central hypothesis."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Specify Analysis and Visualization Methods. This step defines the analytical metrics and graphical plots required to interpret the simulation outputs, compare the different scenarios, and empirically validate the project's hypotheses."
+    },
+    {
+      "number": 6,
+      "type": "research",
+      "instructions": [
+        "Begin with an overview of the simulation's purpose, directly referencing the project's central hypothesis regarding intervention effects on low-achievers.",
+        "Draft a subsection titled 'Simulation Model' that describes the mathematical formalization from Step 1 (the learning equation, intervention effect, and mastery ceiling).",
+        "Draft a subsection titled 'Experimental Design' that details the population parameters and the two primary scenarios (Targeted vs. General) as defined in Step 2.",
+        "Draft a subsection titled 'Simulation Procedure' that describes the step-by-step execution for generating data in both Scenario A (from Step 3) and Scenario B (from Step 4).",
+        "Draft a final subsection titled 'Analysis and Visualization' that explains how effect sizes will be calculated over time and how the results will be plotted to test the hypothesis, as specified in Step 5.",
+        "Ensure the entire document is written in a clear, formal tone appropriate for the methodology section of a research paper, framed as a set of instructions for conducting the study."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Synthesize and Draft the Full Methodology Section. This final step involves consolidating all the details from the preceding steps into a single, coherent, and comprehensive document that describes the complete research methodology from model definition to final analysis."
+    }
+  ],
+  "summary": "This research plan outlines a six-step methodology to simulate and demonstrate that educational interventions have a larger effect on low-achievers than on the general population. The plan starts by formalizing a dynamic learning model with a decaying intervention effect and a mastery ceiling. It then defines the simulation parameters for two scenarios: a targeted intervention on low-achievers and a general intervention on a random sample. The subsequent steps detail the procedures for running these simulations and specify the methods for analysis, focusing on calculating effect size over time. The final step consolidates all previous work into a comprehensive methodology draft, ensuring a structured and rigorous approach to validating the project's core hypothesis through simulation."
+}

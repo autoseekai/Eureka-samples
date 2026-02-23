@@ -1,0 +1,87 @@
+{
+  "steps": [
+    {
+      "number": 1,
+      "type": "research",
+      "instructions": [
+        "Critically review the proposed simulation parameters: N=1000, T=20, MasteryCeiling=100, Boost=0.15, DecayRate=0.25.",
+        "Evaluate the initial score distribution: Truncated Normal (μ=50, σ=15, min=0, max=100).",
+        "Assess the baseline learning rate distribution: Normal (μ=0.05, σ=0.01).",
+        "Analyze whether the combination of these parameters is well-suited to demonstrate the 'catch-up and level-off' dynamic within the 20 time steps. Consider if the boost is sufficient and the decay is not too rapid.",
+        "Document a final, confirmed set of parameters for the simulation, providing a brief justification for their appropriateness. This confirmation is crucial before proceeding to code implementation."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Finalize Simulation Parameters and Design. This step involves a critical review and confirmation of all simulation parameters outlined in the methodology. The goal is to ensure the chosen values are plausible and optimally configured to demonstrate the hypothesized effect dynamics before committing to implementation."
+    },
+    {
+      "number": 2,
+      "type": "experiment",
+      "instructions": [
+        "Implement the core student score update function based on the logistic growth equation: `Score_i(t+1) = Score_i(t) + LR_effective_i(t) * (MasteryCeiling - Score_i(t))`.",
+        "Implement the effective learning rate logic: `LR_effective_i(t) = LR_base_i + Boost * exp(-DecayRate * (t-1))` for treated students and `LR_effective_i(t) = LR_base_i` for control students.",
+        "Write a function to generate the initial population of N students, assigning each an initial score and a baseline learning rate based on the specified distributions.",
+        "Combine these components into a primary simulation engine that takes an initial population, group assignments, and parameters, then iterates for T time steps to produce a complete dataset of student trajectories.",
+        "Ensure the code is modular, allowing for easy execution of different experimental scenarios."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Implement Core Simulation Logic. This step focuses on translating the mathematical model of student learning into functional Python code. The engineer will build the core components for calculating score updates, handling learning rates, and generating the initial student population."
+    },
+    {
+      "number": 3,
+      "type": "experiment",
+      "instructions": [
+        "Generate a single, consistent initial population of 1,000 students to be used for both scenarios.",
+        "Execute Scenario A (Targeted Intervention): Assign students to 'Treatment' or 'Control' based on the 25th percentile of initial scores. Run the simulation and store the results, including columns for 'scenario' ('Targeted') and 'group'.",
+        "Execute Scenario B (General Population RCT): Using the same initial population, randomly assign a corresponding number of students to the 'Treatment' group. Run the simulation and store the results with 'scenario' ('General Population') and 'group' columns.",
+        "Concatenate the results from both scenarios into a single, long-format pandas DataFrame.",
+        "Save the final combined DataFrame to a CSV file named `simulation_data.csv` for use in subsequent analysis steps."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Generate Datasets for Both Experimental Scenarios. This step involves using the core simulation logic to run the two distinct experiments as defined in the methodology. It will produce a single, comprehensive dataset containing the learning trajectories for all students under both the targeted and general population intervention scenarios."
+    },
+    {
+      "number": 4,
+      "type": "experiment",
+      "instructions": [
+        "Load the `simulation_data.csv` file generated in the previous step.",
+        "Develop a function to calculate Cohen's d for a given set of treatment and control scores.",
+        "Group the data by `scenario` and `time_step`.",
+        "Apply the Cohen's d function to each group to compute the effect size at each time point (from t=1 to t=20) for both Scenario A and Scenario B.",
+        "Store these results in a new, clean DataFrame with columns: `scenario`, `time_step`, and `cohens_d`.",
+        "Save the resulting effect size data to a new CSV file named `effect_size_results.csv`.",
+        "As a verification step, print the maximum Cohen's d value and the time step at which it occurs for each of the two scenarios."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Calculate Time-Varying Effect Sizes. This step involves performing the primary quantitative analysis. The researcher will process the generated simulation data to calculate the effect size (Cohen's d) at every time step for both the targeted and general population scenarios."
+    },
+    {
+      "number": 5,
+      "type": "experiment",
+      "instructions": [
+        "Load the `effect_size_results.csv` data.",
+        "Generate the primary 'Effect Size vs. Time' line plot, showing the two Cohen's d trajectories on the same axes with a clear legend and labels. Save as `effect_size_over_time.png`.",
+        "Load the main `simulation_data.csv` data.",
+        "Calculate the average score at each time step for the four subgroups (Treatment/Control for both scenarios).",
+        "Generate the secondary 'Average Score vs. Time' line plot, showing the four learning trajectories with a clear legend and labels. Save as `learning_trajectories.png`.",
+        "Ensure both plots are high-quality, clearly titled, and formatted for inclusion in a research report."
+      ],
+      "assigned_agent": "engineer",
+      "description": "Generate Key Visualizations. This step is dedicated to creating the two primary plots outlined in the methodology. The engineer will produce an effect size plot to compare the scenarios directly and a learning trajectory plot to provide context for the underlying dynamics."
+    },
+    {
+      "number": 6,
+      "type": "research",
+      "instructions": [
+        "Begin by referencing the 'Average Score vs. Time' plot (`learning_trajectories.png`) to describe the raw learning dynamics. Detail the 'catch-up' growth of the Targeted-Treatment group and the 'ceiling effect' impacting all groups.",
+        "Focus on the primary 'Effect Size vs. Time' plot (`effect_size_over_time.png`) to present the central findings. Describe the shape of both effect size curves over the 20 time steps.",
+        "Quantify the key result by stating the peak Cohen's d value achieved in the Targeted Intervention scenario and the time step of its occurrence. Directly compare this with the peak Cohen's d from the General Population RCT, reporting the magnitude of the difference (e.g., 'X times larger').",
+        "Interpret the dynamics: explain that the effect size for the targeted group rises due to the large initial learning potential and then falls as the intervention's boost decays and students approach the mastery ceiling.",
+        "Conclude by summarizing that the simulation results robustly support the hypothesis, demonstrating that interventions boosting learning rates yield significantly larger, time-dependent effects when targeted at low-achievers.",
+        "Emphasize the implication that static, pre-post evaluations can underestimate the true impact of such interventions, underscoring the need for longitudinal measurement."
+      ],
+      "assigned_agent": "researcher",
+      "description": "Synthesize Findings and Write the Full Results Section. The researcher will write a comprehensive 'Results' section for the final report. This involves interpreting the plots and statistics generated in previous steps to construct a clear narrative that directly addresses the project's central hypothesis. This text should be self-contained and ready for inclusion in a paper."
+    }
+  ],
+  "summary": "This research plan outlines a six-step process to simulate and analyze the effect sizes of educational interventions. The plan starts by finalizing simulation parameters, followed by implementing the core simulation logic and generating data for two scenarios: a targeted intervention on low-achievers and a general population RCT. Subsequent steps involve calculating time-varying effect sizes, generating key visualizations of the results, and culminating in a final research step where the researcher synthesizes all findings into a detailed 'Results' section for a formal report."
+}

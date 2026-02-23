@@ -1,0 +1,71 @@
+{
+  "steps": [
+    {
+      "number": 1,
+      "type": "idea",
+      "instructions": [
+        "Generate 5 new research project ideas related to the datasets mentioned in the main task.",
+        "Each idea should propose a distinct approach to simulating the core hypothesis: that educational interventions have larger effect sizes for low-achievers.",
+        "Consider variations in the underlying statistical models, definitions of 'low-achiever', and types of intervention effects (e.g., catching up vs. skill multiplication)."
+      ],
+      "assigned_agent": "idea_maker",
+      "description": "Generate five distinct research project ideas for simulating and demonstrating the differential impact of educational interventions on low-achieving students versus the general population."
+    },
+    {
+      "number": 2,
+      "type": "idea",
+      "instructions": [
+        "Critique the 5 research project ideas generated in the previous step.",
+        "For each idea, evaluate its theoretical soundness, potential for generating clear and unambiguous results, and novelty.",
+        "Identify potential flaws, unrealistic assumptions, or methodological weaknesses in each proposed simulation."
+      ],
+      "assigned_agent": "idea_hater",
+      "description": "Critically evaluate the five research project ideas to identify weaknesses, potential biases, and limitations."
+    },
+    {
+      "number": 3,
+      "type": "idea",
+      "instructions": [
+        "Review the critiques from the idea_hater.",
+        "Select the 2 most promising ideas from the original 5.",
+        "Improve these 2 ideas by directly addressing the critiques, for example by refining the simulation parameters, clarifying the hypothesis, or proposing a more robust analytical approach."
+      ],
+      "assigned_agent": "idea_maker",
+      "description": "Select and improve the two most promising research ideas based on the critiques provided by the idea_hater."
+    },
+    {
+      "number": 4,
+      "type": "idea",
+      "instructions": [
+        "Critique the 2 improved ideas from the previous step.",
+        "Conduct a comparative analysis, highlighting the relative strengths and weaknesses of each.",
+        "Provide a final assessment on which idea is more likely to yield impactful and convincing simulation results."
+      ],
+      "assigned_agent": "idea_hater",
+      "description": "Conduct a final, in-depth critique of the two improved ideas to ensure they are robust and well-defined."
+    },
+    {
+      "number": 5,
+      "type": "idea",
+      "instructions": [
+        "Consider the final round of critiques from the idea_hater.",
+        "Select the single best idea out of the two improved candidates.",
+        "Provide a brief justification for the selection, explaining why it represents the strongest path forward."
+      ],
+      "assigned_agent": "idea_maker",
+      "description": "Select the single best research project idea from the two refined options after considering the final critique."
+    },
+    {
+      "number": 6,
+      "type": "idea",
+      "instructions": [
+        "Formulate a compelling scientific paper title for the selected idea.",
+        "Compose a concise 5-sentence description of the project.",
+        "The description should summarize the core hypothesis, the simulation methodology, the expected findings, and the overall significance of the research idea."
+      ],
+      "assigned_agent": "idea_maker",
+      "description": "Report the final, selected research idea in the format of a scientific paper title and a five-sentence descriptive abstract."
+    }
+  ],
+  "summary": "This research plan outlines a structured 6-step idea generation process to define a compelling project for simulating the differential effect sizes of educational interventions. It orchestrates a dialogue between an 'idea_maker' and an 'idea_hater' to brainstorm, critique, and refine concepts, culminating in a single, well-defined research idea presented as a paper title and abstract. The plan focuses exclusively on developing the optimal project idea, as per the user's instructions, before proceeding to execution."
+}
