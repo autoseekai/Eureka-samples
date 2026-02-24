@@ -173,6 +173,14 @@ Each sample directory preserves the **complete raw artifacts** of that research 
 > and execution trace for inspection.
 
 ---
+## 🗺️ Roadmap
+
+- [ ] **Structured World Model** — Introduce a persistent world model to support
+      ultra-long research runs without losing intermediate findings or context
+- [ ] **Index & Review Pass** — Add an automated indexing and quality-check layer
+      that produces publication-ready papers and reports as direct output
+
+---
 
 ## 🚀 Try It Yourself
 
