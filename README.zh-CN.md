@@ -169,8 +169,6 @@ Eureka 的 AutoSeek 执行引擎目前已上线，支持单次完整研究任务
 | **状态管理** | 单次无状态运行 | 跨轮次持久化世界模型 |
 | **当前状态** | ✅ 已上线 [go.eureka-ai.top](https://go.eureka-ai.top) | 🔧 积极开发中 |
 
-> 本仓库为 Eureka 闭源项目的公开样本展示库。核心代码不对外开放。
-
 ---
 
 <div align="center">

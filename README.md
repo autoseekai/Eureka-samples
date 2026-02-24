@@ -198,9 +198,6 @@ Provide a research objective, upload your dataset — Eureka handles the rest.
 | **State** | Stateless per run | Persistent world model across cycles |
 | **Status** | ✅ Live at [go.eureka-ai.top](https://go.eureka-ai.top) | 🔧 In active development |
 
-> This repository is the public sample showcase for the closed-source Eureka platform.
-> Core source code is not publicly available.
-
 ---
 
 <div align="center">
