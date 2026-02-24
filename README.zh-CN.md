@@ -3,7 +3,7 @@
 </div>
 <div align="center">
 
-# 🌌 Eureka-Samples
+# 🌌 Eureka
 
 **Real outputs from Eureka × AutoSeek — 探索不止，发现不断**
 
