@@ -212,6 +212,5 @@ Provide a research objective, upload your dataset — Eureka handles the rest.
 
 Built with [CrewAI](https://github.com/crewAIInc/crewAI) · FastAPI · Vue 3
 
-© 2025 QIMING HU · All Rights Reserved
 
 </div>
