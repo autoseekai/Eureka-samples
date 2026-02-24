@@ -43,7 +43,7 @@ all performed independently by a multi-agent AI system.
 
 Eureka completes a full research cycle through three strictly sequential autonomous phases:
 
-```
+```mermaid
 flowchart TD
     INPUT["📥 You provide: Research Objective + Dataset"]
 
