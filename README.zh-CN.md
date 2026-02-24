@@ -182,6 +182,5 @@ Eureka 的 AutoSeek 执行引擎目前已上线，支持单次完整研究任务
 
 Built with [CrewAI](https://github.com/crewAIInc/crewAI) · FastAPI · Vue 3
 
-© 2025 QIMING HU · All Rights Reserved
 
 </div>
