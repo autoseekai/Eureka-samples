@@ -71,6 +71,30 @@ Each phase is executed by a dedicated crew of AI agents:
 
 ---
 
+## 🗺️ Roadmap
+- [x] **Dynamic Prompt Routing & Enrichment** - Eureka can be configured to **dynamically choose** a prompt system based on the user’s input. This makes the system more predictable than using a single static prompt template, and keeps the base prompt short while attaching only the relevant modules per request.
+- [ ] **Structured World Model** — Introduce a persistent world model to support
+      ultra-long research runs without losing intermediate findings or context
+- [ ] **Index & Review Pass** — Add an automated indexing and quality-check layer
+      that produces publication-ready papers and reports as direct output
+
+---
+
+## 🚀 Try It Yourself
+
+The **AutoSeek** execution engine is live and supports full end-to-end
+autonomous research task execution.
+
+<div align="center">
+
+### **[→ Visit go.eureka-ai.top to start exploring](https://go.eureka-ai.top)**
+
+</div>
+
+Provide a research objective, upload your dataset — Eureka handles the rest.
+
+---
+
 ## 📂 Samples
 
 Each directory corresponds to one complete research run, named by its unique task ID.
@@ -171,29 +195,6 @@ Each sample directory preserves the **complete raw artifacts** of that research 
 > **`result.md` is the final deliverable of each phase.**
 > The `plan/` and `control/` folders preserve the AI's full reasoning
 > and execution trace for inspection.
-
----
-## 🗺️ Roadmap
-
-- [ ] **Structured World Model** — Introduce a persistent world model to support
-      ultra-long research runs without losing intermediate findings or context
-- [ ] **Index & Review Pass** — Add an automated indexing and quality-check layer
-      that produces publication-ready papers and reports as direct output
-
----
-
-## 🚀 Try It Yourself
-
-The **AutoSeek** execution engine is live and supports full end-to-end
-autonomous research task execution.
-
-<div align="center">
-
-### **[→ Visit go.eureka-ai.top to start exploring](https://go.eureka-ai.top)**
-
-</div>
-
-Provide a research objective, upload your dataset — Eureka handles the rest.
 
 ---
 
