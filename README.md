@@ -40,7 +40,7 @@ Eureka 通过三个严格顺序执行的自主阶段完成一次完整的科学�
 
 ```mermaid
 flowchart TD
-    INPUT["📥 研究目标 · 数据集（可选）"]
+    INPUT["📥 研究目标 · <br/> 数据集（可选）"]
 
     INPUT --> IDEA
     IDEA["💡 第一阶段 · 创意<br/>对抗式辩论生成假设"]
@@ -140,4 +140,97 @@ Eureka 在具有**明确、可量化验证终点**的任务上表现最为可靠
 > 模型中学生成就由知识与动机双重因素决定，并引入交互效应以使匹配优势自然涌现。
 > 预期结果将清晰量化"匹配增益"，为精准教育范式提供理论依据。
 
-<div
+<div align="left">
+  <img src="./assets/2.gif" alt="Eureka Demo" width="800"/>
+</div>
+
+📁 [`782496e4-6b3d-4934-a1e9-a4ef00b60b0a/`](./782496e4-6b3d-4934-a1e9-a4ef00b60b0a/)
+
+---
+
+### 📙 Sample 3 · 私募股权市场的先动者信息级联
+
+> **研究领域**：金融学 / 行为经济学
+> **语言**：English
+
+**研究假设（Phase 1 输出）**
+
+> *First-Mover Dynamics: Quantifying Informational Cascades and Network Leadership in Private Equity Investing*
+>
+> 本研究探究：在经济危机中，机构私募投资者的交易行为是否由理性信息级联（而非非理性羊群效应）所驱动。
+> 通过对共同投资网络中交易序列的事件驱动时序分析，识别一致性"先动者"子群，
+> 并验证其行为对同伴跟随概率的预测能力。研究成果为不透明市场的风险管理提供新框架。
+
+📁 [`e6ee99f8-1e6c-47d6-ac64-c9d584efad23/`](./e6ee99f8-1e6c-47d6-ac64-c9d584efad23/)
+
+---
+
+## 📁 样本目录结构
+
+每个样本目录均保留了该次研究运行的**完整原始产物**：
+
+```
+<task-id>/
+├── idea/
+│   ├── result.md          # ✦ 最终假设报告（论文标题 + 摘要）
+│   ├── plan/              # Planner 生成的任务分解计划
+│   └── control/           # 各轮 Agent 执行记录
+│
+├── methods/
+│   ├── result.md          # ✦ 完整方法论文档（~500词）
+│   ├── plan/
+│   └── control/
+│
+└── experiment/
+    ├── result.md          # ✦ 完整实验结论报告（~2000词，学术风格）
+    ├── plan/
+    └── control/           # 包含 AI 生成并执行的 Python 代码与输出
+```
+
+> **`result.md` 是每个阶段的最终交付物**，`plan/` 与 `control/` 保留了 AI 的完整思考与执行过程，供研究者审查。
+
+---
+
+## 🚀 亲自体验
+
+Eureka 的 AutoSeek 执行引擎目前已上线，支持单次完整研究任务的自主执行。
+
+<div align="center">
+
+### **[→ 前往 go.eureka-ai.top 开始探索](https://go.eureka-ai.top)**
+
+</div>
+
+输入研究目标——有无数据集均可，剩下的交给 Eureka。
+
+---
+
+## ℹ️ 关于 Eureka × AutoSeek
+
+| | AutoSeek 🔬 | Eureka 🌌 |
+|---|---|---|
+| **定位** | 单次研究任务执行引擎 | 长周期科学发现编排平台 |
+| **范围** | 一个问题 → 一份结构化答案 | 一个目标 → 多轮循环 → 完整研究报告 |
+| **状态管理** | 单次无状态运行 | 跨轮次持久化世界模型 |
+| **当前状态** | ✅ 已上线 [go.eureka-ai.top](https://go.eureka-ai.top) | 🔧 积极开发中 |
+
+---
+
+## 🔭 路线图
+
+| 方向 | 描述 | 状态 |
+|---|---|---|
+| 🧮 **算法辅导模式** | 解题 → 验证 → 逐步推理讲解 | 🔧 规划中 |
+| 📈 **量化策略原型** | 自然语言 → 回测代码 → 绩效报告 | 🔧 规划中 |
+| 📊 **结构化数据分析** | 上传 CSV → 自动 EDA → 可下载报告 | 🔧 规划中 |
+| 🔭 **可观测性接入** | Langfuse 追踪完整 Agent 执行链路 | 🔧 完成 |
+
+---
+
+<div align="center">
+
+Built with [CrewAI](https://github.com/crewAIInc/crewAI) · FastAPI · Vue 3
+
+© 2025 QIMING HU · All Rights Reserved
+
+</div>
