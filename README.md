@@ -1,12 +1,12 @@
 <div align="right">
-  <a href="./README.zh-CN.md">中文</a> | <b>English</b>
+  🇨🇳 中文 &nbsp;|&nbsp; <a href="./README.md">🇺🇸 English</a>
 </div>
 
 <div align="center">
 
 # 🌌 Eureka
 
-**Real outputs from Eureka × AutoSeek — Explore More. Discover More.**
+**Real outputs from Eureka × AutoSeek — 探索不止，发现不断**
 
 [![Live Demo](https://img.shields.io/badge/🚀_Try_Live_Demo-go.eureka--ai.top-6366f1?style=for-the-badge)](https://go.eureka-ai.top)
 [![Framework](https://img.shields.io/badge/Powered_by-CrewAI-f59e0b?style=for-the-badge)](https://github.com/crewAIInc/crewAI)
@@ -15,49 +15,44 @@
 
 <br/>
 
-> Every research report in this repository was completed entirely by AI —
-> **no human intervention, no preset conclusions. Just data, an objective, and autonomous reasoning.**
+> 这里的每一份研究报告，都由 AI 从零开始独立完成——
+> **没有人类干预，没有预设结论，只有数据、目标，和自主思考。**
 
 <br/>
 
-**[🚀 Try Live Demo](https://go.eureka-ai.top) · [📖 How It Works](#-how-it-works) · [📂 Browse Samples](#-samples)**
+**[🚀 立即体验](https://go.eureka-ai.top) · [📖 了解工作原理](#-工作原理) · [📂 浏览样本](#-样本列表)**
 
 </div>
 
 ---
 
-## What is This Repository?
+## 这个仓库是什么？
 
-**Eureka-Samples** is a curated collection of real, end-to-end research outputs
-produced by the [Eureka × AutoSeek](https://go.eureka-ai.top) platform.
+**Eureka-Samples** 收录了 [Eureka × AutoSeek](https://go.eureka-ai.top) 平台真实运行产出的完整研究案例。
 
-Each sample is an unedited record of a complete autonomous discovery run:
-from hypothesis generation, through methodology design,
-to data analysis code execution and interpretation —
-all performed independently by a multi-agent AI system.
-**This is real capability, not a hand-crafted demo.**
+每个样本都是一次完整的自主科学发现过程的原始记录：从研究假设的生成，到方法论的设计，再到数据分析代码的编写与执行——全程由多智能体系统独立完成，**展示的是真实能力，而非精心筛选的演示**。
 
 ---
 
-## 🔬 How It Works
+## 🔬 工作原理
 
-Eureka completes a full research cycle through three strictly sequential autonomous phases:
+Eureka 通过三个严格顺序执行的自主阶段完成一次完整的科学研究：
 
 ```mermaid
 flowchart TD
-    INPUT["📥 Objective · <br/> Dataset optional"]
+    INPUT["📥 研究目标 · 数据集（可选）"]
 
     INPUT --> IDEA
-    IDEA["💡 Phase 1 · Idea<br/>Hypothesis generation"]
+    IDEA["💡 第一阶段 · 创意<br/>对抗式辩论生成假设"]
 
-    IDEA -->|Hypothesis Report| METHOD
-    METHOD["📐 Phase 2 · Method<br/>Research design"]
+    IDEA -->|假设报告| METHOD
+    METHOD["📐 第二阶段 · 方法<br/>系统性研究方法设计"]
 
-    METHOD -->|Methodology Document| EXPERIMENT
-    EXPERIMENT["🧪 Phase 3 · Experiment<br/>Code · Execute · Interpret"]
+    METHOD -->|方法论文档| EXPERIMENT
+    EXPERIMENT["🧪 第三阶段 · 实验<br/>编写代码 · 执行 · 解读"]
 
     EXPERIMENT --> OUTPUT
-    OUTPUT["📄 Full Research Report"]
+    OUTPUT["📄 完整研究报告"]
 
     style INPUT      fill:#6366f1,color:#fff,stroke:none
     style IDEA       fill:#f59e0b,color:#fff,stroke:none
@@ -66,72 +61,65 @@ flowchart TD
     style OUTPUT     fill:#22c55e,color:#fff,stroke:none
 ```
 
-
-
-Each phase is executed by a dedicated crew of AI agents:
-**Planner · Engineer · Reviewer · RAG Researcher**
+每个阶段均由专门的 AI Agent 协作完成：**Planner 规划员 · Engineer 工程师 · Reviewer 审查员 · RAG Researcher 检索研究员**
 
 ---
 
-## 🎯 What Works Best
+## 🎯 最适合的任务类型
 
-Eureka performs most reliably when the task has **a clear, measurable validation endpoint** —
-something the system can verify through code execution.
+Eureka 在具有**明确、可量化验证终点**的任务上表现最为可靠——即系统能通过代码执行验证结果的场景。
 
-| Domain | Example Objective | Validation Signal |
+| 领域 | 示例目标 | 验证信号 |
 |---|---|---|
-| 📊 **Data Analysis** | EDA, correlation study, anomaly detection on a CSV | Plot + statistical output |
-| 📈 **Quant Prototyping** | Backtest a momentum strategy, compare GARCH models | Sharpe ratio, drawdown |
-| 🧮 **Algorithm Verification** | Implement & benchmark sorting / graph algorithms | Runtime curve, test results |
-| 🔬 **Mathematical Simulation** | Lorenz attractor, SIR epidemic model, double pendulum | Numerical convergence |
-| 📐 **Hypothesis Validation** | Verify a statistical claim on synthetic or real data | p-value, confidence interval |
+| 📊 **数据分析** | CSV 探索性分析、相关性研究、异常检测 | 图表 + 统计输出 |
+| 📈 **量化策略原型** | 动量策略回测、GARCH 模型比较 | 夏普比率、最大回撤 |
+| 🧮 **算法验证** | 实现并基准测试排序/图遍历算法 | 运行时曲线、测试结果 |
+| 🔬 **数学仿真** | 洛伦兹吸引子、SIR 传染病模型、双摆 | 数值收敛性 |
+| 📐 **假设验证** | 在合成或真实数据上验证统计主张 | p 值、置信区间 |
 
-> 💡 **No dataset?** The system can generate synthetic data for simulation and algorithm tasks.
-> The prompts below require no file upload.
+> 💡 **没有数据集？** 系统可为仿真和算法任务自动生成合成数据，以下示例均无需上传文件。
 
-**High-success prompt examples:**
+**高成功率提示词示例：**
 
 ```text
-Plot a 3D Möbius strip using matplotlib.
+使用 matplotlib 绘制三维莫比乌斯带。
 
-Simulate a double pendulum with two initial conditions and
-plot trajectory divergence as a measure of chaos.
+模拟两种不同初始条件下的双摆运动，
+绘制轨迹散度随时间变化的曲线以量化混沌程度。
 
-Implement quicksort and mergesort, benchmark on arrays of size
-1K / 10K / 100K, and plot the time complexity curves.
+实现快速排序与归并排序，在 1K / 10K / 100K
+规模的数组上基准测试，并绘制时间复杂度曲线。
 
-Simulate stock price paths using GBM and a GARCH(1,1) model;
-compare volatility clustering visually.
+使用 GBM 和 GARCH(1,1) 模型模拟股票价格路径，
+可视化比较两种方法的波动率聚集特征。
 
-Generate 500 samples from a bimodal distribution and verify
-whether a KS-test correctly rejects normality at α = 0.05.
+从双峰分布生成 500 个样本，验证 KS 检验是否
+在 α=0.05 显著性水平下正确拒绝正态性假设。
 ```
 
 ---
 
-## 📂 Samples
+## 📂 样本列表
 
-Each directory corresponds to one complete research run, named by its unique task ID.
+仓库中的每个目录对应一次完整的研究运行，目录名为任务的唯一 ID。
 
 ---
 
-### 📘 Sample 1 · Temporal Dynamics of Educational Interventions
+### 📘 Sample 1 · 教育干预的时间动态效应
 
-> **Domain**: Education / Quantitative Social Science | **Language**: Chinese
+> **研究领域**：教育学 / 量化社会科学
+> **语言**：English
 
-**Research Hypothesis (Phase 1 Output)**
+**研究假设（Phase 1 输出）**
 
 > *Catching Up and Leveling Off: A Dynamic Simulation of How Temporary Learning
 > Rate Boosts Generate Larger Effects for Low-Achievers*
 >
-> We hypothesize that interventions targeting foundational learning skills produce
-> disproportionately large effects for low-achievers by temporarily boosting their
-> learning rate. Simulation results are expected to show that the intervention effect
-> is not static — it peaks at an intermediate time point before declining due to
-> effect decay and mastery ceiling effects, a dynamic that traditional pre-post
-> designs fundamentally fail to capture.
+> 本研究假设：针对基础学习技能的干预措施，通过暂时提升低成就学生的学习速率，产生加速追赶效应。
+> 模拟结果预期表明：干预效应并非静态，而是在中间时间点达到峰值后因效应衰减与掌握度上限的共同作用而下降，
+> 这一峰值效应远超传统简单前后测设计所能捕捉的范围。
 
-<div align="center">
+<div align="left">
   <img src="./assets/g1.gif" alt="Eureka Demo" width="800"/>
 </div>
 
@@ -139,123 +127,17 @@ Each directory corresponds to one complete research run, named by its unique tas
 
 ---
 
-### 📗 Sample 2 · The Matching Effect of Personalized Educational Interventions
+### 📗 Sample 2 · 个性化教育干预的匹配效应模拟
 
-> **Domain**: Education / Precision Learning | **Language**: Chinese
+> **研究领域**：教育学 / 精准教育
+> **语言**：中文
 
-**Research Hypothesis (Phase 1 Output)**
+**研究假设（Phase 1 输出）**
 
-> *The Gain of Personalization: Quantifying the Matching Effect of Educational
-> Interventions via Mechanistic Simulation*
+> **因材施教的增益：通过机制性模拟量化教育干预的匹配效应**
 >
-> This study builds a mechanistic simulation model to quantify the superiority of a
-> "diagnose-and-match" intervention strategy over a one-size-fits-all approach.
-> Student achievement is driven by dual latent factors (knowledge and motivation)
-> with interaction effects, allowing the matching advantage to emerge organically
-> from the model. Results are expected to clearly quantify the "Matching Gain" and
-> provide a theoretical basis for shifting educational practice toward precision support.
+> 本研究构建机制性模拟模型，量化"诊断-匹配"干预策略相对于"一刀切"通用干预的优越性。
+> 模型中学生成就由知识与动机双重因素决定，并引入交互效应以使匹配优势自然涌现。
+> 预期结果将清晰量化"匹配增益"，为精准教育范式提供理论依据。
 
-<div align="center">
-  <img src="./assets/2.gif" alt="Eureka Demo" width="800"/>
-</div>
-
-📁 [`782496e4-6b3d-4934-a1e9-a4ef00b60b0a/`](./782496e4-6b3d-4934-a1e9-a4ef00b60b0a/)
-
----
-
-### 📙 Sample 3 · First-Mover Dynamics in Private Equity Markets
-
-> **Domain**: Finance / Behavioral Economics | **Language**: English
-
-**Research Hypothesis (Phase 1 Output)**
-
-> *First-Mover Dynamics: Quantifying Informational Cascades and Network Leadership
-> in Private Equity Investing*
->
-> This study investigates whether transaction behavior among sophisticated private equity
-> investors during economic crises is driven by rational informational cascades rather
-> than irrational herding. Using event-based relative timing analysis within
-> co-investment networks, we identify consistent "first-movers" and test whether
-> peer follow-through probability is a function of the first-mover's historical
-> success — offering a new framework for risk management in opaque markets.
-
-<div align="center">
-  <img src="./assets/3.gif" alt="Eureka Demo" width="800"/>
-</div>
-
-📁 [`e6ee99f8-1e6c-47d6-ac64-c9d584efad23/`](./e6ee99f8-1e6c-47d6-ac64-c9d584efad23/)
-
----
-
-## 📁 Sample Directory Structure
-
-Each sample directory preserves the **complete raw artifacts** of that research run:
-
-```
-<task-id>/
-├── idea/
-│   ├── result.md          # ✦ Final hypothesis report (paper title + abstract)
-│   ├── plan/              # Planner's task decomposition
-│   └── control/           # Per-round agent execution logs
-│
-├── methods/
-│   ├── result.md          # ✦ Full methodology document (~500 words)
-│   ├── plan/
-│   └── control/
-│
-└── experiment/
-    ├── result.md          # ✦ Full research results report (~2000 words)
-    ├── plan/
-    └── control/           # AI-generated Python code and execution output
-```
-
-> **`result.md` is the final deliverable of each phase.**
-> The `plan/` and `control/` folders preserve the AI's full reasoning
-> and execution trace for inspection.
-
----
-
-## 🚀 Try It Yourself
-
-The **AutoSeek** execution engine is live and supports full end-to-end
-autonomous research task execution.
-
-<div align="center">
-
-### **[→ Visit go.eureka-ai.top to start exploring](https://go.eureka-ai.top)**
-
-</div>
-
-Provide a research objective — with or without a dataset. Eureka handles the rest.
-
----
-
-## ℹ️ About Eureka × AutoSeek
-
-| | AutoSeek 🔬 | Eureka 🌌 |
-|---|---|---|
-| **Role** | Single-task execution engine | Long-horizon discovery orchestrator |
-| **Scope** | One question → one structured answer | One objective → multi-cycle → full report |
-| **State** | Stateless per run | Persistent world model across cycles |
-| **Status** | ✅ Live at [go.eureka-ai.top](https://go.eureka-ai.top) | 🔧 In active development |
-
----
-
-## 🔭 Roadmap
-
-| Direction | Description | Status |
-|---|---|---|
-| 🧮 **Algorithm Tutor Mode** | Solve → verify → explain with step-by-step reasoning | 🔧 Planned |
-| 📈 **Quant Strategy Prototyping** | Natural language → backtest code → performance report | 🔧 Planned |
-| 📊 **Structured Data Analysis** | Upload CSV → auto EDA → downloadable report | 🔧 Planned |
-| 🔭 **Observability** | Langfuse tracing for full agent execution visibility | 🔧 Done |
-
----
-
-<div align="center">
-
-Built with [CrewAI](https://github.com/crewAIInc/crewAI) · FastAPI · Vue 3
-
-© 2025 QIMING HU · All Rights Reserved
-
-</div>
+<div
