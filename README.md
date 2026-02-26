@@ -45,53 +45,67 @@ Eureka completes a full research cycle through three strictly sequential autonom
 
 ```mermaid
 flowchart TD
-    INPUT["📥 You provide: Research Objective + Dataset"]
+    INPUT["📥 Objective · <br/> Dataset optional"]
 
     INPUT --> IDEA
-    IDEA["💡 Phase 1 · Idea<br/>AI generates & refines hypotheses via adversarial debate"]
+    IDEA["💡 Phase 1 · Idea<br/>Hypothesis generation"]
 
     IDEA -->|Hypothesis Report| METHOD
-    METHOD["📐 Phase 2 · Method<br/>AI designs a systematic research methodology (~500 words)"]
+    METHOD["📐 Phase 2 · Method<br/>Research design"]
 
     METHOD -->|Methodology Document| EXPERIMENT
-    EXPERIMENT["🧪 Phase 3 · Experiment<br/>AI writes code, executes analysis, interprets results"]
+    EXPERIMENT["🧪 Phase 3 · Experiment<br/>Code · Execute · Interpret"]
 
     EXPERIMENT --> OUTPUT
-    OUTPUT["📄 Full Research Report (academic style, ~2000 words)"]
+    OUTPUT["📄 Full Research Report"]
 
-    style INPUT     fill:#6366f1,color:#fff,stroke:none
-    style IDEA      fill:#f59e0b,color:#fff,stroke:none
-    style METHOD    fill:#009688,color:#fff,stroke:none
+    style INPUT      fill:#6366f1,color:#fff,stroke:none
+    style IDEA       fill:#f59e0b,color:#fff,stroke:none
+    style METHOD     fill:#009688,color:#fff,stroke:none
     style EXPERIMENT fill:#3b82f6,color:#fff,stroke:none
-    style OUTPUT    fill:#22c55e,color:#fff,stroke:none
+    style OUTPUT     fill:#22c55e,color:#fff,stroke:none
 ```
+
+
 
 Each phase is executed by a dedicated crew of AI agents:
 **Planner · Engineer · Reviewer · RAG Researcher**
 
 ---
 
-## 🗺️ Roadmap
-- [x] **Dynamic Prompt Routing & Enrichment** - Eureka can be configured to **dynamically choose** a prompt system based on the user’s input. This makes the system more predictable than using a single static prompt template, and keeps the base prompt short while attaching only the relevant modules per request.
-- [ ] **Structured World Model** — Introduce a persistent world model to support
-      ultra-long research runs without losing intermediate findings or context
-- [ ] **Index & Review Pass** — Add an automated indexing and quality-check layer
-      that produces publication-ready papers and reports as direct output
+## 🎯 What Works Best
 
----
+Eureka performs most reliably when the task has **a clear, measurable validation endpoint** —
+something the system can verify through code execution.
 
-## 🚀 Try It Yourself
+| Domain | Example Objective | Validation Signal |
+|---|---|---|
+| 📊 **Data Analysis** | EDA, correlation study, anomaly detection on a CSV | Plot + statistical output |
+| 📈 **Quant Prototyping** | Backtest a momentum strategy, compare GARCH models | Sharpe ratio, drawdown |
+| 🧮 **Algorithm Verification** | Implement & benchmark sorting / graph algorithms | Runtime curve, test results |
+| 🔬 **Mathematical Simulation** | Lorenz attractor, SIR epidemic model, double pendulum | Numerical convergence |
+| 📐 **Hypothesis Validation** | Verify a statistical claim on synthetic or real data | p-value, confidence interval |
 
-The **AutoSeek** execution engine is live and supports full end-to-end
-autonomous research task execution.
+> 💡 **No dataset?** The system can generate synthetic data for simulation and algorithm tasks.
+> The prompts below require no file upload.
 
-<div align="center">
+**High-success prompt examples:**
 
-### **[→ Visit go.eureka-ai.top to start exploring](https://go.eureka-ai.top)**
+```text
+Plot a 3D Möbius strip using matplotlib.
 
-</div>
+Simulate a double pendulum with two initial conditions and
+plot trajectory divergence as a measure of chaos.
 
-Provide a research objective, upload your dataset — Eureka handles the rest.
+Implement quicksort and mergesort, benchmark on arrays of size
+1K / 10K / 100K, and plot the time complexity curves.
+
+Simulate stock price paths using GBM and a GARCH(1,1) model;
+compare volatility clustering visually.
+
+Generate 500 samples from a bimodal distribution and verify
+whether a KS-test correctly rejects normality at α = 0.05.
+```
 
 ---
 
@@ -103,7 +117,7 @@ Each directory corresponds to one complete research run, named by its unique tas
 
 ### 📘 Sample 1 · Temporal Dynamics of Educational Interventions
 
-> **Domain**: Education / Quantitative Social Science | **Language**: English
+> **Domain**: Education / Quantitative Social Science | **Language**: Chinese
 
 **Research Hypothesis (Phase 1 Output)**
 
@@ -120,6 +134,7 @@ Each directory corresponds to one complete research run, named by its unique tas
 <div align="center">
   <img src="./assets/g1.gif" alt="Eureka Demo" width="800"/>
 </div>
+
 📁 [`59d59dd0-d095-4ee4-8bd3-076486cc2cea/`](./59d59dd0-d095-4ee4-8bd3-076486cc2cea/)
 
 ---
@@ -143,6 +158,7 @@ Each directory corresponds to one complete research run, named by its unique tas
 <div align="center">
   <img src="./assets/2.gif" alt="Eureka Demo" width="800"/>
 </div>
+
 📁 [`782496e4-6b3d-4934-a1e9-a4ef00b60b0a/`](./782496e4-6b3d-4934-a1e9-a4ef00b60b0a/)
 
 ---
@@ -166,6 +182,7 @@ Each directory corresponds to one complete research run, named by its unique tas
 <div align="center">
   <img src="./assets/3.gif" alt="Eureka Demo" width="800"/>
 </div>
+
 📁 [`e6ee99f8-1e6c-47d6-ac64-c9d584efad23/`](./e6ee99f8-1e6c-47d6-ac64-c9d584efad23/)
 
 ---
@@ -198,6 +215,21 @@ Each sample directory preserves the **complete raw artifacts** of that research 
 
 ---
 
+## 🚀 Try It Yourself
+
+The **AutoSeek** execution engine is live and supports full end-to-end
+autonomous research task execution.
+
+<div align="center">
+
+### **[→ Visit go.eureka-ai.top to start exploring](https://go.eureka-ai.top)**
+
+</div>
+
+Provide a research objective — with or without a dataset. Eureka handles the rest.
+
+---
+
 ## ℹ️ About Eureka × AutoSeek
 
 | | AutoSeek 🔬 | Eureka 🌌 |
@@ -209,9 +241,21 @@ Each sample directory preserves the **complete raw artifacts** of that research 
 
 ---
 
+## 🔭 Roadmap
+
+| Direction | Description | Status |
+|---|---|---|
+| 🧮 **Algorithm Tutor Mode** | Solve → verify → explain with step-by-step reasoning | 🔧 Planned |
+| 📈 **Quant Strategy Prototyping** | Natural language → backtest code → performance report | 🔧 Planned |
+| 📊 **Structured Data Analysis** | Upload CSV → auto EDA → downloadable report | 🔧 Planned |
+| 🔭 **Observability** | Langfuse tracing for full agent execution visibility | 🔧 Done |
+
+---
+
 <div align="center">
 
 Built with [CrewAI](https://github.com/crewAIInc/crewAI) · FastAPI · Vue 3
 
+© 2025 QIMING HU · All Rights Reserved
 
 </div>
