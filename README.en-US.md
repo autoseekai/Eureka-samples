@@ -230,32 +230,62 @@ Provide a research objective — with or without a dataset. Eureka handles the r
 
 ---
 
-## ℹ️ About Eureka × AutoSeek
+## 🚀 Next Phase: Hierarchical Research Orchestration (In Development)
 
-| | AutoSeek 🔬 | Eureka 🌌 |
-|---|---|---|
-| **Role** | Single-task execution engine | Long-horizon discovery orchestrator |
-| **Scope** | One question → one structured answer | One objective → multi-cycle → full report |
-| **State** | Stateless per run | Persistent world model across cycles |
-| **Status** | ✅ Live at [go.eureka-ai.top](https://go.eureka-ai.top) | 🔧 In active development |
+Building on the current AutoSeek execution engine, Eureka is evolving
+into a next-generation scientific discovery architecture with
+**parallel multi-task execution and self-accumulating knowledge**.
+
+### Core New Capabilities
+
+**🔀 Input Pre-Judgment & Task Decomposition**
+Automatically classifies high-level research goals and decomposes them
+into sub-tasks with an explicit dependency DAG — supporting mixed
+serial/parallel execution of retrieval-type and simulation-type tasks.
+
+**🧠 Structured World Model**
+All artifacts from every Agent run (`idea/` · `methods/` · `experiment/`
+— including intermediate reasoning traces, not just final results)
+are no longer stored in isolation. They continuously feed into a
+dual-layer knowledge base:
+
+```
+Vector Store (RAG)    →  Semantic similarity retrieval, paragraph-level
+Knowledge Graph       →  Typed triple inference, with confidence scores
+                          and full source traceability per task run
+```
+
+The system grows smarter with every run — each execution compounds
+on all prior research rather than starting from scratch.
+
+**✅ Two-Layer Cross-Task Validation**
+- **Layer 1 · Pareto Quality Filtering**: Conclusions from parallel
+  sub-tasks are scored across four dimensions — statistical confidence,
+  task coverage, cross-task citation count, and falsifiability.
+  Only non-dominated conclusions on the Pareto frontier are retained.
+- **Layer 2 · Logical Consistency Check**: Retained conclusions are
+  cross-examined at the knowledge graph level, classifying each pair
+  as `supports / neutral / contradicts`. Contradictions are explicitly
+  flagged and reconciled in the final report.
+
+**📋 Annotated Synthesis Report**
+Every finding in the final report carries structured metadata:
+source tasks, confidence score, supporting evidence, logical tensions,
+and the precise conditions under which the conclusion holds —
+producing institution-quality research ready for publication or
+decision-making.
 
 ---
 
-## 🔭 Roadmap
+### Roadmap
 
-| Direction | Description | Status |
+| Phase | Milestone | Status |
 |---|---|---|
-| 🧮 **Algorithm Tutor Mode** | Solve → verify → explain with step-by-step reasoning | 🔧 Planned |
-| 📈 **Quant Strategy Prototyping** | Natural language → backtest code → performance report | 🔧 Planned |
-| 📊 **Structured Data Analysis** | Upload CSV → auto EDA → downloadable report | 🔧 Planned |
-| 🔭 **Observability** | Langfuse tracing for full agent execution visibility | 🔧 Done |
+| AutoSeek | Single-task autonomous research execution | ✅ Live |
+| V1 | Automated task decomposition + dependency DAG | 🔧 In development |
+| V2 | Knowledge triple extraction + graph layer | 📋 Planned |
+| V3 | Pareto filtering + logical consistency check | 📋 Planned |
+| V4 | Persistent world model across multi-session runs | 📋 Planned |
 
----
-
-<div align="center">
-
-Built with [CrewAI](https://github.com/crewAIInc/crewAI) · FastAPI · Vue 3
-
-© 2025 QIMING HU · All Rights Reserved
 
 </div>
