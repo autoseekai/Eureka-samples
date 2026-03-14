@@ -99,6 +99,23 @@ Eureka 在具有**明确、可量化验证终点**的任务上表现最为可靠
 
 ---
 
+## RAG Architecture
+
+### Overview: Dual-Layer Agentic RAG
+<img src="./assets/Generated_chart__rag_overview.png" alt="Eureka Demo" width="800"/>
+
+### Layer 1: Hybrid Retrieval Pipeline
+<img src="./assets/Generated_chart__rag_pipeline.png" alt="Eureka Demo" width="800"/>
+
+### Agent Pull: Progressive Disclosure
+<img src="./assets/Generated_chart__rag_pull.png" alt="Eureka Demo" width="800"/>
+
+### Benchmark Results
+<img src="./assets/Generated_chart__rag_benchmark.png" alt="Eureka Demo" width="800"/>
+
+
+---
+
 ## 📂 样本列表
 
 仓库中的每个目录对应一次完整的研究运行，目录名为任务的唯一 ID。
